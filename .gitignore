@@ -11,3 +11,6 @@ local_settings.py
 bin/*
 lib/*
 src/*
+.project
+.pydevproject
+include/*
