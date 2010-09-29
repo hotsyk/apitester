@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Log in with oDesk account <a href="{% url django_odesk.auth.views.authenticate %}?next={{ next }}">here</a></p>
+{% endblock %}

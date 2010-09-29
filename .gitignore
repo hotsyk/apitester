@@ -1,0 +1,13 @@
+*.*~
+*.bak
+*.orig
+*.pyc
+*.pyo
+*.swo
+*.swp
+*.vim
+*.db
+local_settings.py
+bin/*
+lib/*
+src/*
