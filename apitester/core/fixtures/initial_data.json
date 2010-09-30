@@ -1,0 +1,321 @@
+[
+   {
+      "pk": 1, 
+      "model": "core.apiclass", 
+      "fields": {
+         "name": "finreports"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_provider_billings"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_provider_teams_billings"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_provider_companies_billings"
+      }
+   }, 
+   {
+      "pk": 4, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_provider_earnings"
+      }
+   }, 
+   {
+      "pk": 5, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_provider_teams_earnings"
+      }
+   }, 
+   {
+      "pk": 6, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_provider_companies_earnings"
+      }
+   }, 
+   {
+      "pk": 7, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_buyer_teams_billings"
+      }
+   }, 
+   {
+      "pk": 8, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_buyer_companies_billings"
+      }
+   }, 
+   {
+      "pk": 9, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_buyer_teams_earnings"
+      }
+   }, 
+   {
+      "pk": 10, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_buyer_companies_earnings"
+      }
+   }, 
+   {
+      "pk": 11, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_financial_entities"
+      }
+   }, 
+   {
+      "pk": 12, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 1, 
+         "name": "get_financial_entities_provider"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 1, 
+         "name": "provider_id"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 1, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 2, 
+         "name": "provider_team_id"
+      }
+   }, 
+   {
+      "pk": 4, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 2, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 5, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 3, 
+         "name": "provider_company_id"
+      }
+   }, 
+   {
+      "pk": 6, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 3, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 7, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 4, 
+         "name": "provider_id"
+      }
+   }, 
+   {
+      "pk": 8, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 4, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 9, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 5, 
+         "name": "provider_team_id"
+      }
+   }, 
+   {
+      "pk": 10, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 5, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 11, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 6, 
+         "name": "provider_company_id"
+      }
+   }, 
+   {
+      "pk": 12, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 6, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 13, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 7, 
+         "name": "buyer_team_id"
+      }
+   }, 
+   {
+      "pk": 14, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 7, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 15, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 8, 
+         "name": "buyer_company_id"
+      }
+   }, 
+   {
+      "pk": 16, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 8, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 17, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 9, 
+         "name": "buyer_team_id"
+      }
+   }, 
+   {
+      "pk": 18, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 9, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 19, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 10, 
+         "name": "buyer_company_id"
+      }
+   }, 
+   {
+      "pk": 20, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 10, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 21, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 11, 
+         "name": "accounting_id"
+      }
+   }, 
+   {
+      "pk": 22, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 11, 
+         "name": "query"
+      }
+   }, 
+   {
+      "pk": 23, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 12, 
+         "name": "provider_id"
+      }
+   }, 
+   {
+      "pk": 24, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 12, 
+         "name": "query"
+      }
+   }
+]

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+            function change_client_class() {
+                var value = $('#id_client_class').val();
+                    $.get('/api/functions/'+value, function(data) {
+                      $('#id_function').html(data);
+                    });
+            };
+            function change_function_select() {
+                var value = $('#id_api_functions_select').val();
+                    $.get('/api/params/'+value, function(data) {
+                      $('#id_params').html(data);
+                    });
+            };			
+
+            $(document).ready(function() {
+                $('#id_client_class').change(function() {
+                    change_client_class();
+              });
+			    $('#id_api_functions_select').change(function() {
+                    change_function_select();
+              });
+			  
+        });
+	</script>
+{% endblock %}
+
+{% block content %}
+ 
+ <form action="." method="post">
+ 	{% for f in form %}
+	   {{ f.label}} &nbsp; {{ f }}<br />
+	{% endfor %}
+	<div id="id_function"></div>
+	<div id="id_params"></div>
+	
+	<input type="submit" />
+ </form>
+ 
+ <div id="response">
+ 	  {{ response }}
+ </div>
+{% endblock %}

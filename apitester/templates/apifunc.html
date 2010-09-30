@@ -1,0 +1,22 @@
+<script type="text/javascript">
+            function change_function_select() {
+                var value = $('#id_api_functions_select').val();
+                    $.get('/api/params/'+value, function(data) {
+                      $('#id_params').html(data);
+                    });
+            };          
+
+            $(document).ready(function() {
+                $('#id_api_functions_select').change(function() {
+                    change_function_select();
+              });
+              
+        });
+    </script>
+<select name="api_function" id="id_api_functions_select">
+	{% for func in functions %}
+	    <option value="{{ func.pk }}">{{ func.name }}</option>
+	{% endfor %}
+</select>
+
+	

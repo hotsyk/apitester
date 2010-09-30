@@ -1,0 +1,6 @@
+{% for param in params %}
+	   {{ param.name }}&nbsp;<input name="{{ param.name }}" id="id_param_{{ param.pk }}" value="{{ param.default_value }}" />
+	   <br />
+{% endfor %}
+
+	
