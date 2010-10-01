@@ -7,6 +7,20 @@
       }
    }, 
    {
+      "pk": 2, 
+      "model": "core.apiclass", 
+      "fields": {
+         "name": "hr"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "core.apiclass", 
+      "fields": {
+         "name": "team"
+      }
+   }, 
+   {
       "pk": 1, 
       "model": "core.apifunction", 
       "fields": {
@@ -100,6 +114,78 @@
       "fields": {
          "apiclass": 1, 
          "name": "get_financial_entities_provider"
+      }
+   }, 
+   {
+      "pk": 13, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_company"
+      }
+   }, 
+   {
+      "pk": 14, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_team"
+      }
+   }, 
+   {
+      "pk": 15, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_user"
+      }
+   }, 
+   {
+      "pk": 16, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_company_users"
+      }
+   }, 
+   {
+      "pk": 17, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_team_users"
+      }
+   }, 
+   {
+      "pk": 18, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_teams"
+      }
+   }, 
+   {
+      "pk": 19, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_companies"
+      }
+   }, 
+   {
+      "pk": 20, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 3, 
+         "name": "get_teamrooms"
+      }
+   }, 
+   {
+      "pk": 21, 
+      "model": "core.apifunction", 
+      "fields": {
+         "apiclass": 2, 
+         "name": "get_engagements"
       }
    }, 
    {
@@ -316,6 +402,60 @@
          "default_value": "", 
          "apifunction": 12, 
          "name": "query"
+      }
+   }, 
+   {
+      "pk": 25, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 13, 
+         "name": "company_id"
+      }
+   }, 
+   {
+      "pk": 26, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 14, 
+         "name": "team_id"
+      }
+   }, 
+   {
+      "pk": 27, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 15, 
+         "name": "user_id"
+      }
+   }, 
+   {
+      "pk": 28, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 16, 
+         "name": "company_id"
+      }
+   }, 
+   {
+      "pk": 29, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "", 
+         "apifunction": 17, 
+         "name": "team_id"
+      }
+   }, 
+   {
+      "pk": 30, 
+      "model": "core.apiparam", 
+      "fields": {
+         "default_value": "True", 
+         "apifunction": 17, 
+         "name": "active"
       }
    }
 ]
