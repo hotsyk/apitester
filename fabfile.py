@@ -34,7 +34,7 @@ WSGIPythonHome /var/www/env-baseline
 def staging_server():
     "Use the local virtual server"
     env.hosts = ['184.73.234.253']
-    env.path = '/var/www/smsgate'
+    env.path = '/var/www/apitester'
     env.user = 'root'
     env.virtualhost_path = "/"
     env.virtual_env = "bin"
