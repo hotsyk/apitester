@@ -40,7 +40,7 @@ def api(request):
         api_params = ApiParam.objects.filter(apifunction=apifunc)
         for param in api_params:
             if param.name in params:
-                apiparams[atr(param.name)] = params.pop(param.name, None)
+                apiparams[str(param.name)] = params.pop(param.name, None)
         
         class_to_call = getattr(client, apiclass.name)
         function_to_call = getattr(class_to_call, apifunc.name)
