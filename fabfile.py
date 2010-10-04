@@ -61,17 +61,17 @@ def setup():
     require('hosts', provided_by=[staging_server, production_server])
     require('path')
     require('webserver')
-    sudo('mkdir -p %s; mkdir -p %s/local_settings; cd %s; virtualenv .;' %(env.path, env.path, env.path))
-    sudo('cd %s; mkdir releases; mkdir shared; mkdir packages;' % env.path)
-    sudo('chown -R www-data %s' % env.path)
-    sudo('chmod o+w %s -R' % env.path)
+    sudo('mkdir -p %s; mkdir -p %s/local_settings; cd %s; virtualenv .;' %(env.path, env.path, env.path), pty=True)
+    sudo('cd %s; mkdir releases; mkdir shared; mkdir packages;' % env.path, pty=True)
+    sudo('chown -R apache %s' % env.path, pty=True)
+    sudo('chmod o+w %s -R' % env.path, pty=True)
     run('touch %s/local_settings/local_settings.py' % env.path)
-    sudo('touch /etc/%s/sites-available/000-%s.odeskps.com.conf' % (env.webserver, env.project_name))
+    sudo('touch /etc/%s/sites-available/000-%s.odeskps.com.conf' % (env.webserver, env.project_name), pty=True)
     append(APACHE_CONFIG, '/etc/%(webserver)s/sites-available/000-%(project_name)s.odeskps.com.conf' % {'project_name': env.project_name,
                                                                                                                                          'webserver': env.webserver}, 
-           use_sudo=True)
+          )
     sudo('ln -s /etc/%(webserver)s/sites-available/000-%(project_name)s.odeskps.com.conf /etc/%(webserver)s/sites-enabled/000-%(project_name)s.odeskps.com.conf' % {'project_name': env.project_name,
-                                                                                                                                         'webserver': env.webserver})
+                                                                                                                                         'webserver': env.webserver}, pty=True)
     deploy()
 
 def deploy():
@@ -141,8 +141,8 @@ def install_site():
     "Add the virtualhost file to apache"
     require('release', provided_by=[deploy,])
     sudo('cd %s/releases/%s; cp %s%s%s /etc/apache2/sites-available/' %\
-         (env.path, env.release, env.project_name, env.virtualhost_path, env.project_name, ))
-    sudo('cd /etc/apache2/sites-available/; a2ensite %s' % env.project_name) 
+         (env.path, env.release, env.project_name, env.virtualhost_path, env.project_name, ), pty=True)
+    sudo('cd /etc/apache2/sites-available/; a2ensite %s' % env.project_name, pty=True) 
 
 def install_requirements():
     "Install the required packages from the requirements file using pip"

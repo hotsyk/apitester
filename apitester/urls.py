@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 )
 
-urlpatterns += patterns('core.views',
+urlpatterns += patterns('apitester.core.views',
      
      (r'^api/functions/(?P<pk>\d+)', 'functions',),
       (r'^api/params/(?P<pk>\d+)', 'params',),
