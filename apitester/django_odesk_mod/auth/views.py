@@ -40,7 +40,9 @@ def mod_callback(request, redirect_url=None):
         token, auth_user = odesk_client.auth.get_token(frob)
         request.session[ODESK_TOKEN_SESSION_KEY] = token
         #TODO: Get rid of (conceptually correct) additional request to odesk.com
-        user = django_authenticate(token = token)
+        api_public_key = request.session.get(ODESK_PUBLIC_SESSION_KEY, '')
+        api_private_key = request.session.get(ODESK_PRIVATE_SESSION_KEY, '')
+        user = django_authenticate(public_key=api_public_key, secret_key=api_private_key, token = token)
         if user:
             login(request, user)
         else:

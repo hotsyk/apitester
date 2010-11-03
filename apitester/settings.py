@@ -101,7 +101,7 @@ INSTALLED_APPS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'django_odesk_mod.auth.backends.ModelBackend',
+    'django_odesk_mod.auth.backends.ModModelBackend',
 )
 
 
