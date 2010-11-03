@@ -1,5 +1,5 @@
 from django.conf import settings as django_settings
-from django_odesk.conf import default_settings
+from django_odesk_mod.conf import default_settings
 
 class AppSettings(object):
     

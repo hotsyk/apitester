@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>Log in with oDesk account <a href="{% url django_odesk.auth.views.authenticate %}?next={{ next }}">here</a></p>
+    <p>Log in with oDesk account
+        <form action="{% url django_odesk_mod.auth.views.mod_authenticate %}?next={%url apitester.core.views.api%}" method="post">
+        	{% for f in form %}
+       	   {{ f.label}} &nbsp; {{ f }}<br />
+       	{% endfor %}
+       	<input type="submit" />
+        </form>
+        </p>
 {% endblock %}

@@ -14,7 +14,7 @@
 <p class="errornote">{{ error_message }}</p>
 {% endif %}
 <div id="content-main">
-    <p>Log in with oDesk account <a href="{% url django_odesk.auth.views.authenticate %}?next={% url admin:index %}">here</a></p>
+    <p>Log in with oDesk account <a href="{% url django_odesk_mod.auth.views.authenticate %}?next={% url admin:index %}">here</a></p>
     {% comment %}
     <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
       <div class="form-row">

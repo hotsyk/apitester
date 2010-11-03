@@ -5,9 +5,9 @@ except ImportError:
 from urllib2 import HTTPError
 
 from django.contrib.auth.backends import ModelBackend
-from django_odesk.auth.models import get_user_model
-from django_odesk.conf import settings
-from django_odesk.core.clients import DefaultClient
+from django_odesk_mod.auth.models import get_user_model
+from django_odesk_mod.conf import settings
+from django_odesk_mod.core.clients import DefaultClient
 
 class OdeskUser(object):
 

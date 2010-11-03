@@ -80,7 +80,7 @@ MIDDLEWARE_CLASSES = (
     #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django_odesk.core.middleware.RequestClientMiddleware',
+    'django_odesk_mod.core.middleware.ModRequestClientMiddleware',
 )
 
 ROOT_URLCONF = 'apitester.urls'
@@ -101,7 +101,7 @@ INSTALLED_APPS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'django_odesk.auth.backends.ModelBackend',
+    'django_odesk_mod.auth.backends.ModelBackend',
 )
 
 

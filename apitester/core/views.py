@@ -12,15 +12,19 @@ from sugar.views.decorators import *
 
 from apitester.core.forms import * 
 from apitester.core.models import *
-
+from django_odesk_mod.auth import ODESK_TOKEN_SESSION_KEY, \
+    ODESK_PUBLIC_SESSION_KEY, ODESK_PRIVATE_SESSION_KEY
+    
 @login_required
 @render_to('apitest.html')
 def api(request):
     '''
     '''
+    api_public_key = request.session.get(ODESK_PUBLIC_SESSION_KEY, '')
+    api_private_key = request.session.get(ODESK_PRIVATE_SESSION_KEY, '')
     if request.method == 'GET':
-        form = ApiTestForm(initial={'api_public_key': settings.ODESK_PUBLIC_KEY,
-                                    'api_private_key': settings.ODESK_PRIVATE_KEY})
+        form = ApiTestForm(initial={'api_public_key': api_public_key,
+                                    'api_private_key': api_private_key})
         return {'form': form}
     else:
         #form = ApiTestForm(request.POST)
@@ -45,10 +49,20 @@ def api(request):
         class_to_call = getattr(client, apiclass.name)
         function_to_call = getattr(class_to_call, apifunc.name)
         response = function_to_call(**apiparams)
-        form = ApiTestForm()
+        form = ApiTestForm(initial={'api_public_key': api_public_key,
+                                    'api_private_key': api_private_key})
         return {'form': form,
                 'response': response}
-        
+
+@render_to('registration/login.html')  
+def login(request):
+    form = ApiTestForm(request.REQUEST)
+    if form.is_valid():
+        api_public_key = form.api_public_key
+        api_private_key = form.api_private_key
+        request.session[ODESK_PUBLIC_SESSION_KEY] = api_public_key
+        request.session[ODESK_PRIVATE_KEY] = api_private_key
+    
 
 @render_to('apifunc.html')
 def functions(request, pk):
@@ -69,3 +83,4 @@ def params(request, pk):
     
     return {'params': params, 
             }    
+            

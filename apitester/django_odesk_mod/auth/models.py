@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ImproperlyConfigured
-from django_odesk.conf import settings
+from django_odesk_mod.conf import settings
 
 # DESIGN NOTE:
 # We could do something like this in the default settings:

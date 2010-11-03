@@ -6,8 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    (r'^auth/', include('django_odesk.auth.urls')),
-    (r'^accounts/$', 'django.contrib.auth.views.login'),
+    (r'^auth/', include('django_odesk_mod.auth.urls')),
+    (r'^accounts/$', 'django_odesk_mod.auth.views.mod_login'),
     (r'^accounts/', include('django.contrib.auth.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
