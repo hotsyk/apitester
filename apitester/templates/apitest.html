@@ -29,8 +29,8 @@
 {% endblock %}
 
 {% block content %}
- {%if request.user.is_authenticated%}
-    <a href="#">logout</a>
+ {%if not request.user.is_authenticated%}
+    <a href="/accounts/logout/?next={%url apitester.core.views.api%}">logout</a>
  {%endif%}
  <form action="." method="post">
  	{% for f in form %}
