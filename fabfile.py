@@ -162,7 +162,7 @@ def symlink_current_release():
 def migrate():
     "Update the database - point to discussion - is to use south or no"
     require('project_name')
-    run('cd %s/releases/current/%s;  PYTHONPATH=.. ../../../bin/python manage.py syncdb --noinput' % (env.path, env.project_name))
+    run('cd %s/releases/current/%s; source ../../../bin/activate; PYTHONPATH=.. ../../../bin/python manage.py syncdb --noinput' % (env.path, env.project_name))
     run('cd %s/releases/current/%s;  PYTHONPATH=.. ../../../bin/python manage.py migrate' % (env.path, env.project_name))
 
 def restart_webserver():

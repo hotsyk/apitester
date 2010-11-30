@@ -104,7 +104,7 @@ AUTHENTICATION_BACKENDS = (
     'django_odesk.auth.backends.TeamAuthBackend',
 )
 
-ODESK_AUTH_TEAM = 137373
+ODESK_AUTH_TEAMS = (137373, )
 
 #oDesk users that will have access to admin section 
 ODESK_ADMINS = (
