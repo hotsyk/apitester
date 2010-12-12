@@ -1,5 +1,6 @@
 import odesk
 from datetime import date, datetime as dt
+import inspect
 
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
@@ -72,6 +73,10 @@ def params(request, pk):
     docstring = function_to_call.__doc__
     if docstring is None:
         docstring = "(No documentation available for this function)"
+    argspec = inspect.getargspec(function_to_call)
+    defaults = argspec.defaults or []
+    mandatory_params = argspec.args[:len(argspec.args)-len(defaults)]
     return {'params': params, 
             'docstring': docstring,
+            'mandatory_params': mandatory_params,
             }    
