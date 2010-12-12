@@ -67,5 +67,11 @@ def params(request, pk):
     apifunc = get_object_or_404(ApiFunction, pk=pk)
     params = ApiParam.objects.filter(apifunction=apifunc)
     
+    class_to_call = getattr(request.odesk_client, apifunc.apiclass.name)
+    function_to_call = getattr(class_to_call, apifunc.name)
+    docstring = function_to_call.__doc__
+    if docstring is None:
+        docstring = "(No documentation available for this function)"
     return {'params': params, 
+            'docstring': docstring,
             }    
