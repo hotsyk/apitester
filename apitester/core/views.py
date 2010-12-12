@@ -74,8 +74,8 @@ def params(request, pk):
     if docstring is None:
         docstring = "(No documentation available for this function)"
     argspec = inspect.getargspec(function_to_call)
-    defaults = argspec.defaults or []
-    mandatory_params = argspec.args[:len(argspec.args)-len(defaults)]
+    defaults = argspec[3] or []
+    mandatory_params = argspec.args[:len(argspec[0])-len(defaults)]
     return {'params': params, 
             'docstring': docstring,
             'mandatory_params': mandatory_params,
