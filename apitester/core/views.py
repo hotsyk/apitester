@@ -75,7 +75,7 @@ def params(request, pk):
         docstring = "(No documentation available for this function)"
     argspec = inspect.getargspec(function_to_call)
     defaults = argspec[3] or []
-    mandatory_params = argspec.args[:len(argspec[0])-len(defaults)]
+    mandatory_params = argspec[0][:len(argspec[0])-len(defaults)]
     return {'params': params, 
             'docstring': docstring,
             'mandatory_params': mandatory_params,
