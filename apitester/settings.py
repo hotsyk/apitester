@@ -105,6 +105,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 ODESK_AUTH_TEAMS = (137373, )
+ODESK_AUTH_ADMIN_TEAMS = (137373, )
+ODESK_AUTH_SUPERUSER_TEAMS = (137373, )
 
 #oDesk users that will have access to admin section 
 ODESK_ADMINS = (
