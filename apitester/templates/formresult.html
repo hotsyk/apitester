@@ -1,4 +1,4 @@
-{% load prettyjson %}
+
 <li class="result">
 <h5>{{ class }} - {{ function.name }}</h5>
 <h6>{% for param in params %} 
@@ -6,6 +6,6 @@
 {% endfor %}
 </h6>
 <div class="response-result">
-{{ response|prettyjson }}
+{{ response }}
 </div>
 </li>

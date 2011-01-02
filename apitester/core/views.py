@@ -55,7 +55,7 @@ def api(request):
 
 @render_to('formresult.html')
 def submitform(request, pk):
-    #if request.method == 'POST':
+    if request.method == 'POST':
         try:
             client = request.odesk_client
             
