@@ -1,23 +1,30 @@
 <script type="text/javascript">
-            function change_function_select() {
-                var value = $('#id_api_functions_select').val();
-                    $.get('/api/params/'+value, function(data) {
+            function change_function_select(func_pk) {
+                    $.get('/api/params/'+func_pk, function(data) {
                       $('#id_params').html(data);
                     });
+                     $.get('/api/help/'+func_pk, function(data) {
+                      $('#id_help').html(data);
+                    });
+                    {% for func in functions %}
+                        $('#id_client_func_{{ func.pk }}').removeClass('current');
+                       {% endfor %}
+                      $('#id_client_func_'+func_pk).addClass('current');
             };          
 
             $(document).ready(function() {
-				change_function_select();
-                $('#id_api_functions_select').change(function() {
-                    change_function_select();
-              });
+                {% for func in functions %}
+                    $('#id_client_func_{{ func.pk }}').click(function() {
+                        change_function_select('{{ func.pk }}');
+                    });
+                {% endfor %}
+                
               
         });
     </script>
-<select name="api_function" id="id_api_functions_select">
-	{% for func in functions %}
-	    <option value="{{ func.pk }}">{{ func.name }}</option>
-	{% endfor %}
-</select>
+<ul class="api_func_ul" id="id_client_funcs">
+{% for func in functions %}
+    <li id="id_client_func_{{ func.pk }}">{{ func.name }}</li>
+{% endfor %}
+</ul>
 
-	

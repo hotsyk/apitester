@@ -1,8 +1,35 @@
-<pre>{{ docstring }}
-</pre>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#param_form').submit(function() {
+        var dataString = 'foo=bar';
+        {% for param in params %}
+          dataString += '&{{ param.name }}='+ $('#id_param_{{ param.pk }}').val();
+        {% endfor %}
+        $('#id_ajax_load').show();
+       $.post('/api/submitform/{{ func.pk }}?'+dataString, function(data) {
+                      $('#id_result_ul').prepend(data);
+                      $('#id_ajax_load').hide();
+                    });
+      return false;
+    });
+});
+</script>
+<form id="param_form" method="post" action="/api/submitform/{{ func.pk }}">
 {% for param in params %}
-	   {{ param.name }}{% if param.name in mandatory_params %}<b>*</b>{% endif %}&nbsp;<input name="{{ param.name }}" id="id_param_{{ param.pk }}" value="{{ param.default_value }}" />
+	   {% if param.name in mandatory_params %}
+        <strong>
+       {% endif %}
+       
+       {{ param.name }}
+       
+       {% if param.name in mandatory_params %}
+           <b>*</b>
+           </strong>
+       {% endif %}
+       <br />
+       <input name="{{ param.name }}" id="id_param_{{ param.pk }}" value="{{ param.default_value }}" />
 	   <br />
 {% endfor %}
 
-	
+<input type="submit" onclick="" value=" Send request "/>
+</form>

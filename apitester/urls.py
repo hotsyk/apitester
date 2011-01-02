@@ -2,7 +2,9 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
 
+
 admin.autodiscover()
+
 
 urlpatterns = patterns('',
 
@@ -17,7 +19,10 @@ urlpatterns += patterns('apitester.core.views',
      
      (r'^api/functions/(?P<pk>\d+)', 'functions',),
       (r'^api/params/(?P<pk>\d+)', 'params',),
+      (r'^api/help/(?P<pk>\d+)', 'help',),
+      (r'api/submitform/(?P<pk>\d+)', 'submitform'),
      (r'^api/', 'api',),
+     (r'^$', 'api',),
 )
 
 if settings.SERVE_STATIC_FILES:

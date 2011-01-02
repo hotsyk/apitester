@@ -15,15 +15,13 @@
                     $.get('/api/params/'+value, function(data) {
                       $('#id_params').html(data);
                     });
-            };			
+            };
 
             $(document).ready(function() {
-	
                 $('#id_client_class').change(function() {
                     change_client_class();
               });
-		
-			  
+ 
         });
 	</script>
 {% endblock %}

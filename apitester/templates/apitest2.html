@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+            function change_client_class(class_pk) {
+                    $.get('/api/functions/'+class_pk, function(data) {
+                      $('#id_function').html(data);
+                      {% for class in api_classes %}
+                        $('#id_client_class_{{ class.pk }}').removeClass('current');
+                       {% endfor %}
+                      $('#id_client_class_'+class_pk).addClass('current');
+                    });
+            };
+
+            $(document).ready(function() {
+                {% for class in api_classes %}
+                    $('#id_client_class_{{ class.pk }}').click(function() {
+                        change_client_class('{{ class.pk }}');
+                    });
+                {% endfor %}
+                
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+ 
+ <div class='grid_2' id="id_class"> 
+    <ul class="api_class_ul" id="id_client_class">
+    {% for class in api_classes %}
+        <li id="id_client_class_{{ class.pk }}">{{ class }}</li>
+    {% endfor %}
+    </ul>
+ </div>
+<div class='grid_3' id="id_function"> 
+&nbsp;
+</div> 
+<div class='grid_3' id="id_params"> 
+&nbsp;
+</div> 
+<div class='grid_3' id="id_help"> 
+&nbsp;
+</div> 
+<div class='clear'> 
+</div>
+<div class='grid_12' id="id_ajax_load" style="display:none;">
+    <img src="{{ MEDIA_URL }}images/ajax-loader.gif" />
+</div> 
+<hr />
+<div class='clear'> 
+</div> 
+<div class='grid_12' id="id_result"> 
+ <ul id="id_result_ul">
+ </ul>
+</div> 
+ {% endblock %}
