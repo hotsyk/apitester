@@ -147,8 +147,8 @@ def install_site():
 def install_requirements():
     "Install the required packages from the requirements file using pip"
     require('release', provided_by=[deploy,])
-    run('cd %s; %s/pip install -E . -r ./releases/%s/requirements.txt' % (\
-                                    env.path, env.virtual_env, env.release))
+    #run('cd %s; %s/pip install -E . -r ./releases/%s/requirements.txt' % (\
+    #                                env.path, env.virtual_env, env.release))
 
 def symlink_current_release():
     "Symlink our current release"

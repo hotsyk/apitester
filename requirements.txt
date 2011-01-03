@@ -1,6 +1,6 @@
 Django>=1.2.3
 South>=0.7.2
--e git+git://github.com/odesk/python-odesk.git#egg=python-odesk-0.1.2
+-e git+git://github.com/hotsyk/python-odesk.git#egg=python-odesk-0.2
 -e git+git://github.com/hotsyk/django-odesk.git#egg=django_odesk-0.0.3
 -e git+git://github.com/dcramer/django-devserver#egg=devserver
 -e git+http://github.com/montylounge/django-sugar.git#egg=django-sugar
